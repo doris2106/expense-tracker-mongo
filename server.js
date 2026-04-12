@@ -58,10 +58,9 @@ app.use('*', (req, res) => {
 // Start server
 const startServer = async () => {
   await connectDB();
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-    console.log(`Health check: http://localhost:${PORT}/api/health`);
-  });
+  app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
 };
 
 startServer();
